@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+<variable
+    name="vm"
+    type="com.example.chatapp.ui.chat.ChatViewModel" />
+        <variable
+            name="room"
+            type="com.example.chatapp.myDateBase.Room" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/image_main_background"
+        tools:context=".ui.chat.ChatActivity">
+        <ImageView
+            android:id="@+id/arrowBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="10dp" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+app:layout_constraintEnd_toEndOf="parent"
+    android:layout_margin="20dp"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:text="@{room.roomName}"
+    />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="100dp"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintTop_toTopOf="parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/messages_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_margin="20dp"
+                    app:layout_constraintHeight_percent="0.85"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/message_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintWidth_percent="0.6"
+                    android:hint="@string/enter_your_message"
+                    app:boxCornerRadiusBottomEnd="20dp"
+                    app:boxCornerRadiusBottomStart="20dp"
+                    app:boxCornerRadiusTopEnd="20dp"
+                    app:boxCornerRadiusTopStart="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/messages_rv">
+                    <EditText
+                        android:id="@+id/message_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@={vm.messageLiveData}" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/send"
+                    app:icon="@drawable/ic_send"
+                    android:layout_margin="10dp"
+                    android:onClick="@{()->vm.sentMessage(room)}"
+                    android:backgroundTint="@color/light_blue"
+                    app:layout_constraintTop_toBottomOf="@+id/messages_rv"
+                    app:layout_constraintStart_toEndOf="@+id/message_text"
+                    app:layout_constraintWidth_percent="0.3"/>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

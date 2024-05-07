@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "818034488830",
+    "project_id": "chatota-c08dd",
+    "storage_bucket": "chatota-c08dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818034488830:android:ebf29b42022f2323d43caf",
+        "android_client_info": {
+          "package_name": "com.example.chatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaNf6r1220HfXu3vxchBEqfo1JCeZbTys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

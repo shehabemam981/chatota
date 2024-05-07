@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+<variable
+    name="message"
+    type="com.example.chatapp.myDateBase.MessageData" />
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/sentMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/light_blue"
+        android:text="@{message.content}"
+        android:background="@drawable/shape_sent_message_background" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{message.getFormattedTime()}"
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toStartOf="@id/sentMessage"
+        app:layout_constraintTop_toBottomOf="@id/sentMessage"
+        tools:text="3 am" />
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

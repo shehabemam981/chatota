@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">ChatApp</string>
+    <string name="chatota">Chatota</string>
+    <string name="develop_by_shehab_emam">develop by shehab emam</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="enter_your_email">enter your email</string>
+    <string name="enter_your_password">enter your password</string>
+    <string name="login">Login</string>
+    <string name="forget_password">forget password?</string>
+    <string name="regiester_now">Regiester now</string>
+    <string name="login_now">Login Now</string>
+    <string name="i_have_email">I have Email</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="regiester_now1">Regiester now</string>
+    <string name="enter_your_user_name">enter your user name</string>
+    <string name="create_your_room">Create your room</string>
+    <string name="enter_your_name_room">enter your name room</string>
+    <string name="enter_your_description">enter your description</string>
+    <string name="create_room">Create Room</string>
+    <string name="join">join</string>
+    <string name="enter_your_message">Enter your message</string>
+    <string name="send">send</string>
+    <string-array name="titles_view_pager">
+        <item>All rooms</item>
+        <item>My rooms</item>
+    </string-array>
+
+    <plurals name="members_count">
+        <item quantity="one">%d Member</item>
+        <item quantity="other">%d Members</item>
+    </plurals>
+
+</resources>
